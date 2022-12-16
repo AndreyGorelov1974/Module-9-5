@@ -50,7 +50,7 @@ int main() {
 	int currentDigit = 0;
 
 	for (int i = 4; i > 0; i--) {
-		currentDigit = arabicNumber / std::pow(10, i);
+		currentDigit = arabicNumber / int(std::pow(10, i));
 		if (i == 4) {
 			minDigit = 'M';
 		}
@@ -93,5 +93,6 @@ int main() {
 			romanNumber += minDigit;
 			romanNumber += maxDigit;
 		}
-		std::cout << "Roman number: " << romanNumber << std::endl;
 	}
+	std::cout << "Roman number: " << romanNumber << std::endl;
+}
