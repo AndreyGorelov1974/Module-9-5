@@ -40,8 +40,8 @@ int main() {
 	std::cout << "Enter a number to convert to a Roman number: ";
 	std::cin >> arabicNumber;
 
-	while (arabicNumber < 0 && arabicNumber > 3999) {
-		std::cout << "The number to convert must be in the range from 0 to 3999. Enter again: ";
+	while (arabicNumber <= 0 || arabicNumber > 3999) {
+		std::cout << "The number to convert must be in the range from 1 to 3999. Enter again: ";
 		std::cin >> arabicNumber;
 	}
 
