@@ -49,22 +49,22 @@ int main() {
 	std::string romanNumber = "";
 	int currentDigit = 0;
 
-	for (int i = 4; i > 0; i--) {
-		currentDigit = arabicNumber / int(std::pow(10, i));
-		if (i == 4) {
+	for (int i = 3; i >= 0; i--) {
+		currentDigit = arabicNumber % int(std::pow(10, i + 1)) / int(std::pow(10, i));
+		if (i == 3) {
 			minDigit = 'M';
 		}
-		if (i == 3) {
+		if (i == 2) {
 			minDigit = 'C';
 			midlDigit = 'D';
 			maxDigit = 'M';
 		}
-		if (i == 2) {
+		if (i == 1) {
 			minDigit = 'X';
 			midlDigit = 'L';
 			maxDigit = 'C';
 		}
-		if (i == 1) {
+		if (i == 0) {
 			minDigit = 'I';
 			midlDigit = 'V';
 			maxDigit = 'X';
@@ -83,11 +83,10 @@ int main() {
 			romanNumber += midlDigit;
 		}
 		if (currentDigit >= 6 && currentDigit <= 8) {
+			romanNumber += midlDigit;
 			for (int j = 1; j <= currentDigit - 5; j++) {
-				romanNumber += midlDigit;
 				romanNumber += minDigit;
 			}
-
 		}
 		if (currentDigit == 9) {
 			romanNumber += minDigit;
